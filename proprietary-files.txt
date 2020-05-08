@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from OnePlus7TOxygen_14.E.11_OTA_011_all_2003271950_b7c5bfe612
+# All unpinned blobs below are extracted from OnePlus7TOxygen_13.W.03_OTA_003_all_2004291546_702120895
 
 # ADSP
 vendor/bin/adsprpcd
