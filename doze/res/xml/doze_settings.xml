@@ -34,6 +34,12 @@
             android:title="@string/pick_up_gesture_title"
             android:summary="@string/pick_up_gesture_summary" />
 
+        <SwitchPreference
+            android:key="ambient_display_notification"
+            android:title="@string/doze_title"
+            android:summary="@string/doze_summary"
+            settings:controller="com.android.settings.display.AmbientDisplayNotificationsPreferenceController" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
