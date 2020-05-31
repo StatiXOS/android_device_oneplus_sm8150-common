@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49e0afd0_fd43006d",
+        "filename": "common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-05-31T13:44:03Z",
+      "side": 1,
+      "message": "Use $(LOCAL_PATH) like the other copy outs for consistency.",
+      "revId": "11b989b249a9ba8923c8e78d40fc0caa01d8d056",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    }
+  ]
+}
