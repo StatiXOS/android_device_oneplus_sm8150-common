@@ -24,6 +24,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -33,6 +34,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
@@ -49,7 +51,7 @@ import com.statix.device.DeviceSettings.Constants;
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-
+    private static final String KEY_CATEGORY_CAMERA = "camera";
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
@@ -60,11 +62,16 @@ public class DeviceSettings extends PreferenceFragment
     private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
     public static final String KEY_AUTO_REFRESH_RATE = "auto_refresh_rate";
+    public static final String KEY_ALWAYS_CAMERA_DIALOG = "always_on_camera_dialog";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
 
-
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
+
+    private static final boolean sHasPopupCamera =
+            Build.DEVICE.equals("OnePlus7Pro") ||
+            Build.DEVICE.equals("OnePlus7TPro") ||
+            Build.DEVICE.equals("OnePlus7TProNR");
 
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mDCModeSwitch;
@@ -73,6 +80,8 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mTopKeyPref;
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
+    private SwitchPreference mAlwaysCameraSwitch;
+    private PreferenceCategory mCameraCategory;
     private VibratorStrengthPreference mVibratorStrength;
 
     @Override
@@ -115,6 +124,16 @@ public class DeviceSettings extends PreferenceFragment
             getPreferenceScreen().removePreference((Preference) findPreference(KEY_CATEGORY_REFRESH));
         }
 
+        mCameraCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_CAMERA);
+        if (sHasPopupCamera) {
+            mAlwaysCameraSwitch = (SwitchPreference) findPreference(KEY_ALWAYS_CAMERA_DIALOG);
+            boolean enabled = Settings.System.getInt(getContext().getContentResolver(),
+                        KEY_SETTINGS_PREFIX + KEY_ALWAYS_CAMERA_DIALOG, 0) == 1;
+            mAlwaysCameraSwitch.setChecked(enabled);
+            mAlwaysCameraSwitch.setOnPreferenceChangeListener(this);
+        } else {
+            mCameraCategory.setVisible(false);
+        }
     }
 
     @Override
@@ -147,6 +166,11 @@ public class DeviceSettings extends PreferenceFragment
             } else {
                 this.getContext().stopService(hbmIntent);
             }
+        } else if (preference == mAlwaysCameraSwitch) {
+            boolean enabled = (Boolean) newValue;
+            Settings.System.putInt(getContext().getContentResolver(),
+                        KEY_SETTINGS_PREFIX + KEY_ALWAYS_CAMERA_DIALOG,
+                        enabled ? 1 : 0);
         } else {
             Constants.setPreferenceInt(getContext(), preference.getKey(),
                     Integer.parseInt((String) newValue));
