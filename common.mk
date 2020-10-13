@@ -160,6 +160,9 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
+# Blur
+TARGET_USES_BLUR := true
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
