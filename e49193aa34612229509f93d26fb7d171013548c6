@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38642888_9ce3d9d6",
+        "filename": "common.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-11-16T22:58:50Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "e49193aa34612229509f93d26fb7d171013548c6",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5a59aaa_ad5deb03",
+        "filename": "common.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-11-16T22:58:50Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "e49193aa34612229509f93d26fb7d171013548c6",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    }
+  ]
+}
