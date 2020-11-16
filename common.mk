@@ -477,8 +477,7 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 # USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
+$(call inherit-product, vendor/qcom-opensource/usb/vendor_product.mk)
 
 # VNDK
 PRODUCT_COPY_FILES += \
