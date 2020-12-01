@@ -47,8 +47,6 @@ import com.android.internal.util.statix.FileUtils;
 
 public class DeviceSettings extends PreferenceFragment {
 
-
-
     private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
     public static final String KEY_AUTO_REFRESH_RATE = "auto_refresh_rate";
@@ -64,23 +62,15 @@ public class DeviceSettings extends PreferenceFragment {
         addPreferencesFromResource(R.xml.main);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
+        boolean autoRefresh = AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext());
         mAutoRefreshRate = (SwitchPreference) findPreference(KEY_AUTO_REFRESH_RATE);
-        mAutoRefreshRate.setChecked(AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-        mAutoRefreshRate.setOnPreferenceChangeListener(new AutoRefreshRateSwitch(getContext()));
+        mAutoRefreshRate.setChecked(autoRefresh);
+        mAutoRefreshRate.setOnPreferenceChangeListener(this);
 
         mRefreshRate = (TwoStatePreference) findPreference(KEY_REFRESH_RATE);
-        mRefreshRate.setEnabled(!AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
         mRefreshRate.setChecked(RefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-        mRefreshRate.setOnPreferenceChangeListener(new RefreshRateSwitch(getContext()));
-
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mAutoRefreshRate) {
-              mRefreshRate.setEnabled(!AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-        }
-        return super.onPreferenceTreeClick(preference);
+        mRefreshRate.setOnPreferenceChangeListener(this);
+        updateRefreshRateState(autoRefresh);
     }
     
     @Override
@@ -93,5 +83,10 @@ public class DeviceSettings extends PreferenceFragment {
         }
         return super.onOptionsItemSelected(item);
     }
-}
 
+    private void updateRefreshRateState(boolean auto) {
+        mRefreshRate.setEnabled(!auto);
+        if (auto) mRefreshRate.setChecked(false);
+    }
+
+}
