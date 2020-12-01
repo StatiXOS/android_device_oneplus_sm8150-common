@@ -44,10 +44,10 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
 import com.android.internal.util.statix.FileUtils;
+import com.statix.device.DeviceSettings.Constants;
 
-public class DeviceSettings extends PreferenceFragment {
-
-
+public class DeviceSettings extends PreferenceFragment 
+        implements Preference.OnPreferenceChangeListener{
 
     private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
@@ -64,25 +64,39 @@ public class DeviceSettings extends PreferenceFragment {
         addPreferencesFromResource(R.xml.main);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
+        boolean autoRefresh = AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext());
         mAutoRefreshRate = (SwitchPreference) findPreference(KEY_AUTO_REFRESH_RATE);
-        mAutoRefreshRate.setChecked(AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-        mAutoRefreshRate.setOnPreferenceChangeListener(new AutoRefreshRateSwitch(getContext()));
+        mAutoRefreshRate.setChecked(autoRefresh);
+        mAutoRefreshRate.setOnPreferenceChangeListener(this);
 
         mRefreshRate = (TwoStatePreference) findPreference(KEY_REFRESH_RATE);
-        mRefreshRate.setEnabled(!AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
         mRefreshRate.setChecked(RefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-        mRefreshRate.setOnPreferenceChangeListener(new RefreshRateSwitch(getContext()));
+        mRefreshRate.setOnPreferenceChangeListener(this);
+        updateRefreshRateState(autoRefresh);
 
     }
 
     @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mAutoRefreshRate) {
-              mRefreshRate.setEnabled(!AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+         if (preference == mAutoRefreshRate) {
+            Boolean enabled = (Boolean) newValue;
+            Settings.System.putFloat(getContext().getContentResolver(),
+                    Settings.System.PEAK_REFRESH_RATE, 90f);
+            Settings.System.putFloat(getContext().getContentResolver(),
+                    Settings.System.MIN_REFRESH_RATE, 60f);
+            Settings.System.putInt(getContext().getContentResolver(),
+                    AutoRefreshRateSwitch.SETTINGS_KEY, enabled ? 1 : 0);
+            updateRefreshRateState(enabled);
+        } else if (preference == mRefreshRate) {
+            Boolean enabled = (Boolean) newValue;
+            RefreshRateSwitch.setPeakRefresh(getContext(), enabled);
+        } else {
+            Constants.setPreferenceInt(getContext(), preference.getKey(),
+                    Integer.parseInt((String) newValue));
         }
-        return super.onPreferenceTreeClick(preference);
+        return true;
     }
-    
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -93,5 +107,11 @@ public class DeviceSettings extends PreferenceFragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void updateRefreshRateState(boolean auto) {
+        mRefreshRate.setEnabled(!auto);
+        if (auto) mRefreshRate.setChecked(false);
+    }
+
 }
 
