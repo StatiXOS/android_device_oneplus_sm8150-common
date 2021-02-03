@@ -57,7 +57,6 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio
 vendor/bin/hw/vendor.dolby.hardware.dms@1.0-service
-vendor/etc/dolby/dax-default.xml
 vendor/etc/init/vendor.dolby.hardware.dms@1.0-service.rc
 vendor/etc/media_codecs_dolby_audio.xml
 vendor/lib/hw/audio.bluetooth_qti.default.so
@@ -65,13 +64,7 @@ vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib/btaudio_offload_if.so
-vendor/lib/liba2dpoffload.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
 vendor/lib/libadm.so
-vendor/lib/libaudcal.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioalsa.so
@@ -87,7 +80,6 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib/soundfx/libswdap.so
 vendor/lib/vendor.dolby.hardware.dms@1.0.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
@@ -96,11 +88,6 @@ vendor/lib64/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib64/btaudio_offload_if.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
 vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioalsa.so
@@ -114,30 +101,22 @@ vendor/lib64/soundfx/libhaptic_effect.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
-vendor/lib64/soundfx/libswdap.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/vendor.dolby.hardware.dms@1.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@1.0.so
 vendor/lib64/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 
-# Audio amplifier firmware
-vendor/firmware/tfa98xx.cnt
-
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbthost_if.so
-vendor/lib/libbtnv.so
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbthost_if.so
-vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
@@ -160,7 +139,6 @@ vendor/etc/camera/attribute.model
 vendor/etc/camera/calibrationOutput_uw.bin
 vendor/etc/camera/calibrationOutput_wt.bin
 vendor/etc/camera/distortion_result.bin
-vendor/etc/camera/vidhance_calibration
 vendor/etc/init/vendor.oneplus.camera.CameraHIDL@1.0-service.rc
 vendor/etc/init/vl53l1.rc
 vendor/lib/camera/com.qti.sensor.gc5035.so
@@ -170,10 +148,6 @@ vendor/lib/camera/com.qti.sensor.imx481.so
 vendor/lib/camera/com.qti.sensor.imx586.so
 vendor/lib/camera/com.qti.sensor.s5k3m5.so
 vendor/lib/camera/components/com.oneplus.node.distortion.so
-vendor/lib/camera/components/com.oneplus.node.eis.so
-vendor/lib/camera/components/com.oneplus.node.memcpy.so
-vendor/lib/camera/components/com.oneplus.node.preview.so
-vendor/lib/camera/components/com.oneplus.node.sat.so
 vendor/lib/camera/components/com.oneplus.node.snapshotfusion.so
 vendor/lib/camera/components/com.oneplus.node.supernightraw.so
 vendor/lib/camera/components/com.qti.camx.chiiqutils.so
@@ -184,17 +158,13 @@ vendor/lib/camera/components/com.qti.hvx.binning.so
 vendor/lib/camera/components/com.qti.node.depth.so
 vendor/lib/camera/components/com.qti.node.dummyrtb.so
 vendor/lib/camera/components/com.qti.node.dummysat.so
-vendor/lib/camera/components/com.qti.node.eisv2.so
-vendor/lib/camera/components/com.qti.node.eisv3.so
 vendor/lib/camera/components/com.qti.node.fcv.so
 vendor/lib/camera/components/com.qti.node.gpu.so
 vendor/lib/camera/components/com.qti.node.memcpy.so
 vendor/lib/camera/components/com.qti.node.remosaic.so
 vendor/lib/camera/components/com.qti.node.stich.so
 vendor/lib/camera/components/com.qti.node.swregistration.so
-vendor/lib/camera/components/com.qti.stats.aec.so
 vendor/lib/camera/components/com.qti.stats.aecwrapper.so
-vendor/lib/camera/components/com.qti.stats.af.so
 vendor/lib/camera/components/com.qti.stats.afd.so
 vendor/lib/camera/components/com.qti.stats.afwrapper.so
 vendor/lib/camera/components/com.qti.stats.asd.so
@@ -239,13 +209,9 @@ vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmorpho_image_refiner.so
 vendor/lib/libmpbase.so
-vendor/lib/libopcamera_native_modules.so
-vendor/lib/libsns_api.so
 vendor/lib/libsns_device_mode_stub.so
 vendor/lib/libsns_fastRPC_util.so
 vendor/lib/libsns_low_lat_stream_stub.so
-vendor/lib/libsnsapi.so
-vendor/lib/libsnsdiaglog.so
 vendor/lib/libSonyIMX471RmscLibrary.so
 vendor/lib/libSuperSensor.so
 vendor/lib/libSuperSensorFallback.so
@@ -271,11 +237,6 @@ vendor/lib64/camera/com.qti.sensor.imx471.so
 vendor/lib64/camera/com.qti.sensor.imx481.so
 vendor/lib64/camera/com.qti.sensor.imx586.so
 vendor/lib64/camera/com.qti.sensor.s5k3m5.so
-vendor/lib64/camera/com.qti.tuned.default.bin
-vendor/lib64/camera/components/com.oneplus.node.eis.so
-vendor/lib64/camera/components/com.oneplus.node.memcpy.so
-vendor/lib64/camera/components/com.oneplus.node.preview.so
-vendor/lib64/camera/components/com.oneplus.node.sat.so
 vendor/lib64/camera/components/com.oneplus.node.supernightraw.so
 vendor/lib64/camera/components/com.qti.camx.chiiqutils.so
 vendor/lib64/camera/components/com.qti.eisv2.so
@@ -285,17 +246,13 @@ vendor/lib64/camera/components/com.qti.hvx.binning.so
 vendor/lib64/camera/components/com.qti.node.depth.so
 vendor/lib64/camera/components/com.qti.node.dummyrtb.so
 vendor/lib64/camera/components/com.qti.node.dummysat.so
-vendor/lib64/camera/components/com.qti.node.eisv2.so
-vendor/lib64/camera/components/com.qti.node.eisv3.so
 vendor/lib64/camera/components/com.qti.node.fcv.so
 vendor/lib64/camera/components/com.qti.node.gpu.so
 vendor/lib64/camera/components/com.qti.node.memcpy.so
 vendor/lib64/camera/components/com.qti.node.remosaic.so
 vendor/lib64/camera/components/com.qti.node.stich.so
 vendor/lib64/camera/components/com.qti.node.swregistration.so
-vendor/lib64/camera/components/com.qti.stats.aec.so
 vendor/lib64/camera/components/com.qti.stats.aecwrapper.so
-vendor/lib64/camera/components/com.qti.stats.af.so
 vendor/lib64/camera/components/com.qti.stats.afd.so
 vendor/lib64/camera/components/com.qti.stats.afwrapper.so
 vendor/lib64/camera/components/com.qti.stats.asd.so
@@ -311,7 +268,6 @@ vendor/lib64/camera/components/com.qtistatic.stats.aec.so
 vendor/lib64/camera/components/com.qtistatic.stats.af.so
 vendor/lib64/camera/components/com.qtistatic.stats.awb.so
 vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so
-vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib64/camera/components/com.oneplus.node.distortion.so
 vendor/lib64/camera/components/com.oneplus.node.snapshotfusion.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
@@ -348,13 +304,9 @@ vendor/lib64/libmmcamera_faceproc.so
 vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmorpho_image_refiner.so
 vendor/lib64/libmpbase.so
-vendor/lib64/libopcamera_native_modules.so
-vendor/lib64/libsns_api.so
 vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_fastRPC_util.so
 vendor/lib64/libsns_low_lat_stream_stub.so
-vendor/lib64/libsnsapi.so
-vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libSonyIMX471RmscLibrary.so
 vendor/lib64/libst_relighting.so
 vendor/lib64/libstblur_capture_api.so
@@ -465,9 +417,6 @@ vendor/lib64/libcvp_stub.so
 vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 vendor/lib64/vendor.qti.hardware.cvp@1.0-halimpl.so
 
-# DASH
-sbin/dashd:bin/dashd
-
 # Display - from OnePlus7TOxygen_13.W.22_OTA_0210_all_2101121639_9a48c7dc03e64c06
 vendor/bin/ppd|a03c0e99141553d02725597ac6ec5d3d947d8d2c
 vendor/bin/qdcmss|f9ec0e758dcfddbac0a8ce5748b106b2ab091a17
@@ -577,13 +526,11 @@ vendor/lib64/libdpmqmihal.so
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/bin/hw/vendor.oneplus.hardware.drmkey@1.0-service
 vendor/bin/hw/vendor.oneplus.hardware.hdcpkey@1.0-service
-vendor/bin/qseecomd
 vendor/etc/gpfspath_oem_config.xml
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/etc/init/qseecomd.rc
 vendor/etc/init/vendor.oneplus.hardware.drmkey@1.0-service.rc
 vendor/etc/init/vendor.oneplus.hardware.hdcpkey@1.0-service.rc
-vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libbase64.so
 vendor/lib/libcpion.so
 vendor/lib/libdrmfs.so
@@ -604,7 +551,6 @@ vendor/lib/libspl.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libtzdrmgenprov.so
-vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libbase64.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
@@ -625,7 +571,6 @@ vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
-vendor/lib64/libwvhidl.so
 vendor/lib64/vendor.oneplus.hardware.drmkey@1.0.so
 vendor/lib64/vendor.oneplus.hardware.hdcpkey@1.0.so
 
@@ -664,8 +609,6 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/bin/qfp-daemon
 vendor/etc/permissions/qti_fingerprint_interface.xml
 vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/libarm_proxy_skel.so
-vendor/lib64/libhvx_proxy_stub.so
 vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
@@ -680,7 +623,6 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GPS
-vendor/lib/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib/vendor.qti.gnss@3.0-service.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/vendor.qti.gnss@3.0-service.so
@@ -690,7 +632,6 @@ vendor/bin/garden_app
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/mlid
-vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
@@ -698,39 +639,27 @@ vendor/bin/hw/android.hardware.gnss@2.0-service-qti
 vendor/etc/cacert_location.pem
 vendor/etc/xtra_root_cert.pem
 vendor/etc/init/android.hardware.gnss@2.0-service-qti.rc
-vendor/lib/hw/android.hardware.gnss@2.0-impl-qti.so
 vendor/lib/libgarden.so
 vendor/lib/libgeofencing.so
-vendor/lib/libgnss.so
 vendor/lib/libgnsspps.so
 vendor/lib/libgps.utils.so
 vendor/lib/libizat_client_api.so
 vendor/lib/libizat_core.so
 vendor/lib/libloc_core.so
 vendor/lib/liblocation_api.so
-vendor/lib/libslimclient.so
-vendor/lib64/hw/android.hardware.gnss@2.0-impl-qti.so
-vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
-vendor/lib64/libdataitems.so
 vendor/lib64/libgarden.so
 vendor/lib64/libgarden_haltests_e2e.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgeofencing.so
-vendor/lib64/libgnss.so
 vendor/lib64/libgnsspps.so
 vendor/lib64/libgps.utils.so
 vendor/lib64/libizat_client_api.so
 vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_core.so
 vendor/lib64/libloc_socket.so
 vendor/lib64/liblocation_api.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libslimclient.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss@1.0.so
 vendor/lib64/vendor.qti.gnss@1.1.so
@@ -1536,12 +1465,6 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Vibrator firmware
-vendor/firmware/aw8697_haptic.bin
-vendor/firmware/aw8697_haptic_166.bin
-vendor/firmware/aw8697_haptic_168.bin
-vendor/firmware/aw8697_haptic_170.bin
-vendor/firmware/aw8697_haptic_172.bin
-vendor/firmware/aw8697_haptic_174.bin
 vendor/firmware/aw8697_rtp.bin
 vendor/firmware/aw8697_rtp_lighthouse.bin
 vendor/firmware/aw8697_rtp_silk.bin
