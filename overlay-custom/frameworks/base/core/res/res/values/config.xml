@@ -50,4 +50,7 @@
     <!-- Hide FOD while Going to sleep from lockscreen to avoid HBM flicker
 	 or FOD Circle hiding after the screen is put to sleep -->
     <bool name="config_hideFodCircleGoingToSleep">true</bool>
+
+    <!-- Whether device has Dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
 </resources>
