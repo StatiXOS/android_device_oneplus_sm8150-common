@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e2c608f_8942959f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2021-02-07T04:14:24Z",
+      "side": 1,
+      "message": "Needed for oneplus7 to boot\nwithout this, NFC spams and dies constantly.",
+      "revId": "e21a98f3c1b5299457ca8468e76dfe57f6b62108",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
