@@ -9,6 +9,8 @@ vendor.bluetooth.soc=cherokee
 
 # Camera
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.factorymode,com.oneplus.camera,com.oneplus.healthcheck
+persist.camera.assert.panic=true
+ro.opcamera.support=true
 
 # CNE
 persist.vendor.cne.feature=1
@@ -82,6 +84,8 @@ ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Priv-app permissions whitelist
 ro.control_privapp_permissions=enforce
+persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera
+persist.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera
 
 # Radio
 DEVICE_PROVISIONED=1
