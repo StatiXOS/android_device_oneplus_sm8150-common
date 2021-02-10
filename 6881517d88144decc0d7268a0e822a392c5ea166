@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0ab5b11_396def64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000033
+      },
+      "writtenOn": "2021-02-10T11:15:19Z",
+      "side": 1,
+      "message": "why not go the oneplus way and add it to odm manifests\nits only enabled on select variants",
+      "revId": "6881517d88144decc0d7268a0e822a392c5ea166",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
