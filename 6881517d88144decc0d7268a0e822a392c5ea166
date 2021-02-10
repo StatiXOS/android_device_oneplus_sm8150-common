@@ -16,6 +16,24 @@
       "message": "why not go the oneplus way and add it to odm manifests\nits only enabled on select variants",
       "revId": "6881517d88144decc0d7268a0e822a392c5ea166",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cead087_b9a6988d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000033
+      },
+      "writtenOn": "2021-02-10T11:16:26Z",
+      "side": 1,
+      "message": "we are using prebuilt services and blobs anyways :shrugs:",
+      "parentUuid": "f0ab5b11_396def64",
+      "revId": "6881517d88144decc0d7268a0e822a392c5ea166",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
