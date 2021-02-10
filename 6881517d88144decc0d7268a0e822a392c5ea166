@@ -69,6 +69,24 @@
       "message": "there are devices like 7TPro5G which doesnt support secure_element",
       "revId": "6881517d88144decc0d7268a0e822a392c5ea166",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb6e3f9c_73407665",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2021-02-10T11:29:57Z",
+      "side": 1,
+      "message": "Does it prevent boot? If no, then I don\u0027t see a problem with this",
+      "parentUuid": "630dad1e_54d12227",
+      "revId": "6881517d88144decc0d7268a0e822a392c5ea166",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
