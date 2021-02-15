@@ -1155,7 +1155,7 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     onrestart restart audioserver
 
-service dashd /system/bin/dashd
+service dashd /vendor/bin/dashd
     class core
     critical
     group root system
