@@ -90,7 +90,8 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService
+    AntHalService \
+    com.dsi.ant@1.0.vendor
 
 # Device Settings
 PRODUCT_PACKAGES += \
@@ -102,11 +103,9 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio@5.0-impl \
-    android.hardware.audio.effect@5.0-impl \
-    android.hardware.audio.common@2.0-util \
-    android.hardware.audio.common@5.0-util \
+    android.hardware.audio.service \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
@@ -163,7 +162,8 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     liba2dpoffload \
     libbthost_if \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -171,7 +171,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     libxml2 \
-    Snap \
     vendor.oneplus.camera.CameraHIDL@1.0.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
@@ -258,8 +257,6 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
 
 # Fingerprint
@@ -409,12 +406,17 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.2 \
-    android.hardware.radio.config@1.0 \
+    android.hardware.radio@1.5 \
+    android.hardware.radio.config@1.2 \
+    android.hardware.radio.deprecated@1.0 \
     android.hardware.secure_element@1.0 \
     libprotobuf-cpp-full \
     librmnetctl \
+    libjson \
     libxml2
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.vendor.dpm.feature=11
 
 # Vendor libstdc++
 PRODUCT_PACKAGES += \
@@ -504,6 +506,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.0.vendor \
     vendor.qti.hardware.wifi.hostapd@1.1.vendor \
+    vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     wifi-mac-generator \
