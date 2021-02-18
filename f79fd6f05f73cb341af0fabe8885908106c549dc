@@ -68,6 +68,24 @@
       "message": "Just make another RRO in DeviceTree",
       "revId": "f79fd6f05f73cb341af0fabe8885908106c549dc",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1763c43c_d6fc6635",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-02-18T02:18:36Z",
+      "side": 1,
+      "message": "I like this",
+      "parentUuid": "bb666a4a_0acefd87",
+      "revId": "f79fd6f05f73cb341af0fabe8885908106c549dc",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
