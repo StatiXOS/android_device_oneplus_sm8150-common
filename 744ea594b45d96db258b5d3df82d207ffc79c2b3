@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27dbfc6a_0a59ba93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-03-05T14:01:50Z",
+      "side": 1,
+      "message": "Vulkan still has some regressions which are otherwise overshadowed by the uplift in benchmark scores. Keep that in mind before merging this one. GL is still the more stable and reliable option.",
+      "revId": "744ea594b45d96db258b5d3df82d207ffc79c2b3",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
