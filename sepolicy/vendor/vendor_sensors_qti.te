@@ -1,0 +1,2 @@
+# Allow vendor_sensors_qti to read and write into vendor_diag_device
+allow vendor_sensors_qti vendor_diag_device:chr_file rw_file_perms;
