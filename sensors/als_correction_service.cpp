@@ -28,35 +28,32 @@ using android::Rect;
 using android::ScreenshotClient;
 using android::sp;
 using android::SurfaceComposerClient;
+using android::DisplayCaptureArgs;
+using android::gui::IScreenCaptureListener;
 
 constexpr int SCREENSHOT_INTERVAL = 1;
 
 void updateScreenBuffer() {
     static time_t lastScreenUpdate = 0;
-    static sp<GraphicBuffer> outBuffer = new GraphicBuffer(
-            10, 10, android::PIXEL_FORMAT_RGB_888,
-            GraphicBuffer::USAGE_SW_READ_OFTEN | GraphicBuffer::USAGE_SW_WRITE_OFTEN);
-
+    const auto display = SurfaceComposerClient::getInternalDisplayToken();
+    DisplayCaptureArgs captureArgs = new CaptureArgs(display, ALS_POS_X, ALS_POS_Y, true);
+    static const sp<IScreenCaptureListener> captureResults;
     struct timespec now;
     clock_gettime(CLOCK_MONOTONIC, &now);
     SetProperty("vendor.sensors.als_correction.updated", "0");
 
     if (now.tv_sec - lastScreenUpdate >= SCREENSHOT_INTERVAL) {
         // Update Screenshot at most every second
-        ScreenshotClient::capture(SurfaceComposerClient::getInternalDisplayToken(),
-                                  android::ui::Dataspace::V0_SRGB,
-                                  android::ui::PixelFormat::RGBA_8888,
-                                  Rect(ALS_POS_X, ALS_POS_Y, ALS_POS_X + 10, ALS_POS_Y + 10),
-                                  10, 10, true, android::ui::ROTATION_0, &outBuffer);
+        ScreenshotClient::captureDisplay(captureArgs, captureResults);
         lastScreenUpdate = now.tv_sec;
 
         uint8_t *out;
-        outBuffer->lock(GraphicBuffer::USAGE_SW_READ_OFTEN, reinterpret_cast<void **>(&out));
+        captureResults->lock(GraphicBuffer::USAGE_SW_READ_OFTEN, reinterpret_cast<void **>(&out));
         SetProperty("vendor.sensors.als_correction.r", std::to_string(static_cast<uint8_t>(out[0])));
         SetProperty("vendor.sensors.als_correction.g", std::to_string(static_cast<uint8_t>(out[1])));
         SetProperty("vendor.sensors.als_correction.b", std::to_string(static_cast<uint8_t>(out[2])));
         SetProperty("vendor.sensors.als_correction.updated", "1");
-        outBuffer->unlock();
+        captureResults->unlock();
     }
 }
 
