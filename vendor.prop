@@ -111,6 +111,8 @@ vendor.display.disable_scaler=0
 vendor.display.disable_ui_3d_tonemap=1
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
+# Set Adaptive/Automatic (P3) Color Mode by default
+persist.sys.sf.native_mode=2
 
 # DPM
 persist.vendor.dpmhalservice.enable=1
